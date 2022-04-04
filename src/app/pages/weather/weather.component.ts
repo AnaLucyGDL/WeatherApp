@@ -9,6 +9,8 @@ import { WeatherData } from '@app/shared/interfaces/weather.interface';
 })
 export class WeatherComponent {
   @Input() public weather!: WeatherData;
+  public BASE_URL = 'http://openweathermap.org/img/wn';
+
   constructor() { }
 
 }
