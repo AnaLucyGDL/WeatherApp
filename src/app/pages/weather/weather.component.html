@@ -1,1 +1,25 @@
-<p>weather works!</p>
+<div class="card">
+    <div class="card_image">
+        <img src="{{BASE_URL}}/{{weather.weather[0].icon}}@2x.png}}" [alt]="weather.name">
+    </div>
+    <div class="card_main">
+        {{weather.weather[0].main}}
+    </div>
+    <div class="card_city">
+        {{weather.name}}, {{weather.sys.country}} / {{weather.main.temp | number:'1.0-0'}}&#8451;
+    </div>
+    <div class="card_stats">
+        <div class="card_stat width-33">
+            <div class="card_stat-stat">{{weather.main.pressure}}</div>
+            <div class="card_stat-name">Pressure</div>
+        </div>
+        <div class="card_stat width-33">
+            <div class="card_stat-stat">{{weather.main.humidity}}</div>
+            <div class="card_stat-name">Humidity</div>
+        </div>
+        <div class="card_stat width-33">
+            <div class="card_stat-stat">{{weather.wind.speed}}</div>
+            <div class="card_stat-name">Wind</div>
+        </div>
+    </div>
+</div>
