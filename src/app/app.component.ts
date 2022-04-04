@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { Observable } from 'rxjs';
+import { WeatherData } from './shared/interfaces/weather.interface';
 
 @Component({
   selector: 'app-root',
@@ -7,7 +8,7 @@ import { Observable } from 'rxjs';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  public weather$!:Observable<any>;
+  public weather$!:Observable<WeatherData>;
 
   public onSearch(search:string):void{
     console.log(search);
