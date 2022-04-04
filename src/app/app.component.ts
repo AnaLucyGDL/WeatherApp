@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { Observable } from 'rxjs';
+import { WeatherService } from './pages/weather/services/weather.service';
 import { WeatherData } from './shared/interfaces/weather.interface';
 
 @Component({
@@ -10,7 +11,9 @@ import { WeatherData } from './shared/interfaces/weather.interface';
 export class AppComponent {
   public weather$!:Observable<WeatherData>;
 
-  public onSearch(search:string):void{
-    console.log(search);
+  constructor(private readonly weatherSvc: WeatherService) {}
+
+  public onSearch(city:string):void{
+    this.weather$ = this.weatherSvc.getWeatherByName(city);
   }
 }
