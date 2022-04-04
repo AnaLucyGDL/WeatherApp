@@ -1,0 +1,59 @@
+@import 'variables';
+
+.card {
+  background-color: $white;
+  margin-top: 2rem;
+  border-radius: $border-radius-size;
+  color: $grey;
+  padding: 20px;
+  font-size: 20px;
+
+  .card__image {
+    position: relative;
+    height: 4rem;
+    margin-bottom: 2.188rem;
+    border-top-left-radius: $border-radius-size;
+    border-top-right-radius: $border-radius-size;
+    background-color: $secondary-color;
+
+    img {
+      position: relative;
+      top: -1rem;
+      right: -8rem;
+    }
+  }
+  .card__main {
+    text-transform: uppercase;
+    padding: 10px;
+  }
+  .card__city {
+    font-size: 25px;
+    font-weight: bolder;
+    margin-bottom: 1rem;
+  }
+  .card__stats {
+    background-color: $main-color;
+    color: $white;
+    display: flex;
+    justify-content: space-evenly;
+    border-radius: 1rem;
+
+    .card__stat {
+      padding: 1.25rem 1rem;
+      text-align: center;
+      border-right: 0.1rem solid $white;
+
+      &--stat {
+        position: relative;
+        font-size: 1.5rem;
+        margin-bottom: 0.625rem;
+      }
+      &--name {
+        text-transform: uppercase;
+        font-weight: 400;
+        font-size: 0.75rem;
+        color: $white;
+      }
+    }
+  }
+}
