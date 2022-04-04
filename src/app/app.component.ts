@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { Observable } from 'rxjs';
 import { WeatherService } from './pages/weather/services/weather.service';
 import { WeatherData } from './shared/interfaces/weather.interface';
+import { GeolocationService } from './shared/services/geolocation.service';
 
 @Component({
   selector: 'app-root',
@@ -11,12 +12,25 @@ import { WeatherData } from './shared/interfaces/weather.interface';
 export class AppComponent {
   public weather$!:Observable<WeatherData>;
 
-  constructor(private readonly weatherSvc: WeatherService) {}
+  constructor(
+    private readonly weatherSvc: WeatherService,
+    private readonly getLocationSvc: GeolocationService
+    ) {
+      if(navigator?.geolocation) { //Verify if he navigator can access to geolocation
+        this.getLocation();
+      }
+  }
 
   public onSearch(city:string):void{
     this.weather$ = this.weatherSvc.getWeatherByName(city);
   }
-}
 
-//https://api.openweathermap.org/data/2.5/weather?q={city name}&appid={API key}
-//https://api.openweathermap.org/data/2.5/weather?lat={lat}&lon={lon}&appid={API key}
+  private async getLocation(): Promise<void> {
+    try {
+      const {coords} = await this.getLocationSvc.getCurrentPosition();
+      this.weather$ = this.weatherSvc.getWeatherByCoords(coords);
+    } catch (error) {
+      console.error(error);
+    }
+  }
+}
