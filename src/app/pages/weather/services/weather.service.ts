@@ -12,9 +12,7 @@ export class WeatherService {
   //Search by city
   public getWeatherByName(city: string):Observable<WeatherData>{
     const params = new HttpParams() // Params we need to send to the API
-      .set('q', city)
-      .set('units', 'metric')
-      .set('appid', environment.openWeather.key);
+      .set('q', city);
     return this.http.get<WeatherData>(`${this.API_URL}/weather`, {params});
   };
 
@@ -22,9 +20,7 @@ export class WeatherService {
   public getWeatherByCoords(coords: Coord):Observable<WeatherData> {
   const params = new HttpParams() // Params we need to send to the API
       .set('lat', coords.lat)
-      .set('lon', coords.lon)
-      .set('units', 'metric')
-      .set('appid', environment.openWeather.key);
+      .set('lon', coords.lon);
   return this.http.get<WeatherData>(`${this.API_URL}/weather`, {params});
   };
 }
