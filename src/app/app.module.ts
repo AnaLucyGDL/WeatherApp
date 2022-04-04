@@ -16,7 +16,8 @@ import { WeatherModule } from './pages/weather/weather.module';
     AppRoutingModule,
     HttpClientModule,
     SearchModule,
-    WeatherModule
+    WeatherModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]
