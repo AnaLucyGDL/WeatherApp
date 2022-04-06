@@ -10,7 +10,7 @@
 
   .card__image {
     position: relative;
-    height: 4rem;
+    height: 6rem;
     margin-bottom: 2.188rem;
     border-top-left-radius: $border-radius-size;
     border-top-right-radius: $border-radius-size;
@@ -18,8 +18,8 @@
 
     img {
       position: relative;
-      top: -1rem;
-      right: -8rem;
+      top: -.1rem;
+      right: -14rem;
     }
   }
   .card__main {
