@@ -1,0 +1,131 @@
+$white: #F9F3E4;
+$pink: #F29DAB;
+$rose: #DD899E;
+$tan: #F2CDC1;
+$taupe: #ad728b;
+
+@import url('https://fonts.googleapis.com/css?family=Questrial');
+
+$font: 'Questrial', sans-serif;
+
+html {
+  min-height: 100%;
+}
+
+.box {
+    align-content: center;
+  width: 800px;  
+  margin: 10% auto;
+  position: relative;
+}
+
+#card-container {
+  position: relative;
+  margin: 30px;
+  width: 200px;
+  height: 200px;
+  z-index: 1;
+  float: left;
+  perspective: 1000px;
+}
+
+img {
+  width: 200px;
+  height: 200px;
+}
+
+.img2 {
+    width: 170px;
+    height: 200px;
+    margin-left: 15px;
+  }
+
+#card, #card2, #card3 {
+  width: 100%;
+  height: 100%;
+  margin: 10%;
+  transform-style: preserve-3d;
+  transition: all .8s linear;
+  box-shadow: 5px 5px 15px rgba(0,0,0, .3);
+  background: $white;
+}
+
+#card {
+  &:hover {
+    transform: rotateY(180deg);
+    box-shadow: -5px 5px 15px rgba(0,0,0, .3);
+  }
+}
+
+#card2 {
+  &:hover {
+    transform: rotateY(-180deg);
+    box-shadow: -5px 5px 15px rgba(0,0,0, .3);
+  }
+}
+
+#card3 {
+  &:hover {
+    transform: rotateX(180deg);
+    box-shadow: 5px -5px 15px rgba(0,0,0, .3);
+  }
+  .back {
+    transform: rotateX(-180deg);
+  }
+}
+
+.face {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
+}
+.back {
+  display: block;
+  transform: rotateY(180deg);
+  box-sizing: border-box;
+  padding: 10px;
+  text-align: center;
+  opacity: .7;
+  background: $white;
+}
+.artist{
+  color: $taupe;
+}
+
+h1, p {
+  font-family: $font;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+}
+
+h1 {
+  font-size: 1.2em;
+  padding-top: 15px;
+  color: $taupe;
+}
+
+p {
+  font-size: 1em;
+}
+
+.date {
+  color: $taupe;
+}
+
+footer {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  font-size: 0.8em;
+  text-transform: uppercase;
+  padding: 10px;
+  color: #EA7996;
+  a {
+    color: #ffffff;
+    text-decoration: none;
+    &:hover {
+      color: #7d7d7d;
+    }
+  }
+}
