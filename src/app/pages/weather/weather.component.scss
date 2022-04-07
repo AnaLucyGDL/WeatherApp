@@ -31,6 +31,7 @@
     font-weight: bolder;
     margin-bottom: 1rem;
   }
+  
   .card__stats {
     background-color: $main-color;
     color: $white;
@@ -38,6 +39,9 @@
     justify-content: space-evenly;
     border-radius: 1rem;
 
+    .card_border{
+      border-right: none !important;
+    }
     .card__stat {
       padding: 1.25rem 1rem;
       text-align: center;
