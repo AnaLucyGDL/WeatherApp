@@ -17,9 +17,7 @@
     background-color: $secondary-color;
 
     img {
-      position: relative;
-      top: -.1rem;
-      right: -14rem;
+      float: right;
     }
   }
   .card__main {
@@ -31,7 +29,7 @@
     font-weight: bolder;
     margin-bottom: 1rem;
   }
-  
+
   .card__stats {
     background-color: $main-color;
     color: $white;

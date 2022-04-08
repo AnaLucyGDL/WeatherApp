@@ -14,17 +14,16 @@ html {
 
 .box {
     align-content: center;
-  width: 800px;  
+  width: 800px;
   margin: 10% auto;
   position: relative;
 }
 
 #card-container {
   position: relative;
-  margin: 30px;
+  margin: 60px;
   width: 200px;
   height: 200px;
-  z-index: 1;
   float: left;
   perspective: 1000px;
 }
